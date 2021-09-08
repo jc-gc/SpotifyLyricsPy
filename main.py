@@ -22,7 +22,6 @@ def main():
         input()
         exit()
 
-    
     lf = LyricFetcher(GeniusAPIKey)
 
     while 1:
@@ -33,6 +32,8 @@ def main():
         except spotify.SpotifyClosed:
             print("Spotify must be running, press Enter to try again.")
             input()
+        except spotify.SpotifyPaused:
+            pass
 
 if __name__ == '__main__':
     main()
